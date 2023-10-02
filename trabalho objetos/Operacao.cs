@@ -81,14 +81,11 @@ namespace trabalho_objetos
                     break;
             }
 
-
             conta1.Sacar(valor);
             Operacao transacao1 = new Operacao(-valor, "Recarga de celular!");
             conta1.extrato.Add(transacao1);
             Console.WriteLine("Recarga Efetuada!");
         }
-
-
 
     }
 }
