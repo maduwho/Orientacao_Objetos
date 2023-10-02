@@ -8,19 +8,19 @@ namespace trabalho_objetos
 {
     internal class Conta
     {
-        public string nome;
-        public int idade;
-        public int num_da_conta;
-        public int num_verificador;
-        public double saldo;
-        public List<Transacao> extrato;
+        public string Nome;
+        public int Idade;
+        public int Num_da_conta;
+        public int Num_verificador;
+        public double Saldo;
+        public List<Operacao> extrato;
 
         public void MostrarExtrato(string tipo = "GERAL")
         {
-            Console.WriteLine($"O extrato de {nome} é ");
+            Console.WriteLine($"O extrato de {Nome} é ");
 
             
-            foreach (Transacao item in extrato)
+            foreach (Operacao item in extrato)
             {
                 if (tipo == "GERAL" || tipo == item.tipo)
                 {
@@ -32,28 +32,28 @@ namespace trabalho_objetos
         }
         public void MostrarSaldo()
         {
-            Console.WriteLine($"O saldo de {nome} é R${saldo}");
+            Console.WriteLine($"O saldo de {Nome} é R${Saldo}");
         }
 
         public void Sacar(double valor)
         {
-            saldo -= valor; 
+            Saldo -= valor; 
         }
 
         public void Depositar(double valor)
         {
-            saldo += valor;
+            Saldo += valor;
         }
-        
-    
-        public Conta(string nome, int idade, int num_da_conta, int num_verificador)
+
+
+        public Conta(string nome, int idade, int num_da_conta, int num_verificador) 
         {
-            this.nome = nome;
-            this.idade = idade;
-            this.num_da_conta = num_da_conta;
-            this.num_verificador = num_verificador;
-            this.saldo = new Random().Next(100,1000);
-            this.extrato = new List<Transacao>();
+            this.Nome = nome;
+            this.Idade = idade;
+            this.Num_da_conta = num_da_conta;
+            this.Num_verificador = num_verificador;
+            this.Saldo = new Random().Next(100,1000);
+            this.extrato = new List<Operacao>();
         }
     }
 }
