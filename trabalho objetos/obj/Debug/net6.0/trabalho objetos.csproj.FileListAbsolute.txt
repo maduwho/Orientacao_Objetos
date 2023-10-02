@@ -1,0 +1,15 @@
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\bin\Debug\net6.0\trabalho objetos.exe
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\bin\Debug\net6.0\trabalho objetos.deps.json
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\bin\Debug\net6.0\trabalho objetos.runtimeconfig.json
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\bin\Debug\net6.0\trabalho objetos.dll
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\bin\Debug\net6.0\trabalho objetos.pdb
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\obj\Debug\net6.0\trabalho objetos.csproj.AssemblyReference.cache
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\obj\Debug\net6.0\trabalho objetos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\obj\Debug\net6.0\trabalho objetos.AssemblyInfoInputs.cache
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\obj\Debug\net6.0\trabalho objetos.AssemblyInfo.cs
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\obj\Debug\net6.0\trabalho objetos.csproj.CoreCompileInputs.cache
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\obj\Debug\net6.0\trabalho objetos.dll
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\obj\Debug\net6.0\refint\trabalho objetos.dll
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\obj\Debug\net6.0\trabalho objetos.pdb
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\obj\Debug\net6.0\trabalho objetos.genruntimeconfig.cache
+C:\Users\maria.silva180\OneDrive - SENAC-SC\Orientação objetos\trabalho objetos\trabalho objetos\obj\Debug\net6.0\ref\trabalho objetos.dll
