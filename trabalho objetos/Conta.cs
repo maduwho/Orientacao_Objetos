@@ -13,6 +13,7 @@ namespace trabalho_objetos
         public int Num_da_conta;
         public int Num_verificador;
         public double Saldo;
+        public int RendaMensal;
         public List<Operacao> extrato;
 
         public void MostrarExtrato(string tipo = "GERAL")
@@ -54,6 +55,7 @@ namespace trabalho_objetos
             this.Num_verificador = num_verificador;
             this.Saldo = new Random().Next(100,1000);
             this.extrato = new List<Operacao>();
+            this.RendaMensal = new Random().Next(100,1000);
         }
     }
 }
