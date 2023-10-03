@@ -12,6 +12,7 @@ namespace trabalho_objetos
             contas.Add(new Conta("Madu", 20, 6789, 0));
             contas.Add(new Conta("Bruno", 23, 3216, 7));
             contas.Add(new Conta("Jadina", 23, 7894, 2));
+            contas.Add(new Conta("Victor", 17, 1597, 6));
 
             string[] operacoes = { "GERAL", "PIX", "DÉBITO", "CRÉDITO" };
             for (int i = 0; i < 50; i++)
