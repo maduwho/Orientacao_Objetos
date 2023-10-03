@@ -87,11 +87,11 @@ namespace trabalho_objetos
             Console.WriteLine("Recarga Efetuada!");
         }
 
-        public static void RealizerEmprestimo(int RendaMensal)
+        public static void RealizarEmprestimo(int RendaMensal)
         {
             if ( RendaMensal > 500)
             {
-                Console.WriteLine("Você pode fazer um empréstimo de até R$50.000,00");
+                
             }
         }
     }
