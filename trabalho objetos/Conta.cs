@@ -47,7 +47,7 @@ namespace trabalho_objetos
         }
 
 
-        public Conta(string nome, int idade, int num_da_conta, int num_verificador) 
+        public ContaModel(string nome, int idade, int num_da_conta, int num_verificador) 
         {
             this.Nome = nome;
             this.Idade = idade;

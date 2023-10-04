@@ -8,7 +8,7 @@ namespace trabalho_objetos
 {
     internal class Menu
     {
-        public static Conta MenuLogin(List<Conta> contas)
+        public static ContaModel MenuLogin(List<ContaModel> contas)
         {
             do
             {
@@ -32,7 +32,7 @@ namespace trabalho_objetos
                 {
                     num_do_verificador = 0;
                 }
-                foreach (Conta conta in contas)
+                foreach (ContaModel conta in contas)
                 {
                     if (conta.Num_da_conta == num_da_conta && conta.Num_verificador == num_do_verificador)
                     {
