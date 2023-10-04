@@ -8,7 +8,7 @@ namespace trabalho_objetos
 {
     internal class ContaModel
     {
-        public static List<Conta> List = Crud.OpenFile(new List<Conta>());
+        public static List<Conta> List = BancoDeDados.OpenFile(new List<Conta>());
 
         public static void Create ()
         {

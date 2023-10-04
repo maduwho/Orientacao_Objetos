@@ -66,7 +66,7 @@ namespace trabalho_objetos
             }while (true);
 
 
-            Crud.WriteFile(ContaModel.List);
+            BancoDeDados.WriteFile(ContaModel.List);
         }
         
         

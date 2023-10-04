@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace trabalho_objetos
 {
-    internal class Crud
+    internal class BancoDeDados
     {
         private static string path = "conta.txt";
         public static void WriteFile(List<Conta> data)
@@ -15,7 +15,7 @@ namespace trabalho_objetos
             try
             {
                 string json = JsonSerializer.Serialize(data);
-                File.WriteAllText(Crud.path, json);
+                File.WriteAllText(BancoDeDados.path, json);
             }
             catch (Exception ex)
             {
@@ -28,7 +28,7 @@ namespace trabalho_objetos
 
             try
             {
-                string json = File.ReadAllText(Crud.path);
+                string json = File.ReadAllText(BancoDeDados.path);
                 data = JsonSerializer.Deserialize<List<Conta>>(json);
             }
             catch (System.IO.FileNotFoundException)
