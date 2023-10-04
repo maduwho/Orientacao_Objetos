@@ -21,7 +21,7 @@ namespace trabalho_objetos
             this.data = DateTime.Now;
         }
 
-        public static void Transferir(ContaModel conta1, ContaModel conta2, double valor, string tipo, bool log = true)
+        public static void Transferir(Conta conta1, Conta conta2, double valor, string tipo, bool log = true)
         {
             conta1.Sacar(valor);
             Operacao transacao1 = new Operacao(-valor, tipo);
@@ -36,7 +36,7 @@ namespace trabalho_objetos
             }
         }
 
-        public static void RecarregarCelular(ContaModel conta1)
+        public static void RecarregarCelular(Conta conta1)
         {
             Console.WriteLine("Selecione sua operadora:\n1-TIM\n2-VIVO\n3-CLARO\n4-OI\n5-LariCel");
             int operadora = Convert.ToInt32(Console.ReadLine());

@@ -9,7 +9,7 @@ namespace trabalho_objetos
     internal class Conta
     {
         public string Nome;
-        public int Idade;
+        public int Cpf;
         public int Num_da_conta;
         public int Num_verificador;
         public double Saldo;
@@ -47,10 +47,10 @@ namespace trabalho_objetos
         }
 
 
-        public ContaModel(string nome, int idade, int num_da_conta, int num_verificador) 
+        public Conta(string nome, int Cpf, int num_da_conta, int num_verificador) 
         {
             this.Nome = nome;
-            this.Idade = idade;
+            this.Cpf = Cpf;
             this.Num_da_conta = num_da_conta;
             this.Num_verificador = num_verificador;
             this.Saldo = new Random().Next(100,1000);

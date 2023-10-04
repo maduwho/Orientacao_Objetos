@@ -12,11 +12,11 @@ namespace trabalho_objetos
 
             if (ContaModel.List.Count == 0 )
             {
-                ContaModel.List.Add(new ContaModel("Ricardo", 23, 1234, 5));
-                ContaModel.List.Add(new ContaModel("Madu", 20, 6789, 0));
-                ContaModel.List.Add(new ContaModel("Bruno", 23, 3216, 7));
-                ContaModel.List.Add(new ContaModel("Jadina", 23, 7894, 2));
-                ContaModel.List.Add(new ContaModel("Victor", 17, 1597, 6));
+                ContaModel.List.Add(new Conta("Ricardo", 23, 1234, 5));
+                ContaModel.List.Add(new Conta("Madu", 20, 6789, 0));
+                ContaModel.List.Add(new Conta("Bruno", 23, 3216, 7));
+                ContaModel.List.Add(new Conta("Jadina", 23, 7894, 2));
+                ContaModel.List.Add(new Conta("Victor", 17, 1597, 6));
                 for (int i = 0; i < 50; i++)
                 {
                      Operacao.Transferir(ContaModel.List[new Random().Next(0,4)], ContaModel.List[new Random().Next(0,4)], new Random().Next(10,300), operacoes[new Random().Next(1,operacoes.Length)],false);
@@ -25,15 +25,15 @@ namespace trabalho_objetos
 
             //RecarregarCelular(contas[0]);
             //contas[3].MostrarExtrato(); 
-            foreach (ContaModel conta in ContaModel.List)
+            foreach (Conta conta in ContaModel.List)
             {
                 conta.MostrarSaldo();
             }
-
+            
             do
             {
                 
-                ContaModel selecao = Menu.MenuLogin(ContaModel.List);
+                Conta selecao = Menu.MenuLogin(ContaModel.List);
                 switch (Menu.MenuOpcoes())
                 {
                     case 1:
@@ -45,7 +45,7 @@ namespace trabalho_objetos
                     case 3:
                         string tipo = operacoes[Menu.MenuTransferencia()];
 
-                        ContaModel beneficiario = Menu.MenuLogin(ContaModel.List);
+                        Conta beneficiario = Menu.MenuLogin(ContaModel.List);
                         int valor;
                         try
                         {
