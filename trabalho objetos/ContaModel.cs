@@ -12,7 +12,8 @@ namespace trabalho_objetos
 
         public static void Create ()
         {
-
+            Conta novaConta = new Conta(1 , new Random().Next(0, 9));
+            ContaModel.List.Add(novaConta);
         }
 
         public static void Read ()

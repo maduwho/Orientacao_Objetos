@@ -9,7 +9,7 @@ namespace trabalho_objetos
     internal class Conta
     {
         public string Nome;
-        public int Cpf;
+        public string Cpf;
         public int Num_da_conta;
         public int Num_verificador;
         public double Saldo;
@@ -47,9 +47,16 @@ namespace trabalho_objetos
         }
 
 
-        public Conta(string nome, int Cpf, int num_da_conta, int num_verificador) 
+        public Conta(int num_da_conta, int num_verificador, string nome = null, string Cpf = null) 
         {
-            this.Nome = nome;
+            if (nome == null)
+            {
+                Console.WriteLine("Digite o nome da Conta");
+                this.Nome = Console.ReadLine();
+            } else
+            {
+                this.Nome = nome;
+            }
             this.Cpf = Cpf;
             this.Num_da_conta = num_da_conta;
             this.Num_verificador = num_verificador;
