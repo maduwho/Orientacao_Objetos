@@ -19,20 +19,20 @@ namespace trabalho_objetos
                 "Silva", "Santos", "Pereira", "Ferreira", "Almeida", "Ribeiro", "Oliveira", "Costa", "Gonçalves", "Rodrigues",
                 "Martins", "Lima", "Araújo", "Fernandes", "Carvalho", "Gomes", "Nascimento", "Mendes", "Barbosa", "Teixeira",
                 "Machado", "Cardoso", "Dias", "Sousa", "Correia", "Ramos", "Cavalcanti", "Dantas", "Castro", "Vieira", "de Souza",
-                "Schmidt", "Müller", "Schneider", "Fischer", "Weber", "Schulz", "Becker", "Hoffmann", "Koch", "Bauer", "mees",
+                "Schmidt", "Müller", "Schneider", "Fischer", "Weber", "Schulz", "Becker", "Hoffmann", "Koch", "Bauer", "Mees",
                 "Rossi", "Russo", "Ferrari", "Esposito", "Bianchi", "Romano", "Colombo", "Ricci", "Marino", "Greco"
             };
 
             do
             {
-                string nomeAleatorio = nomes[random.next(nomes.length)] + " "
-                                     + sobrenomes[random.Next(nomes.length)] + " "
-                                     + sobrenomes[random.Next(nomes.length)];
+                string nomeAleatorio = nomes[new Random().Next(0, nomes.Count())] + " "
+                                     + sobrenomes[new Random().Next(0, nomes.Count())] + " "
+                                     + sobrenomes[new Random().Next(0, nomes.Count())];
 
                 string cpfAleatorio = "";
                 for (int i = 0; i < 11; i++)
                 {
-                    cpfAleatorio += random.Next(10).ToString();
+                    cpfAleatorio += new Random().Next(0, 10).ToString();
                 }
 
                 ContaModel.Create(nomeAleatorio, cpfAleatorio);
