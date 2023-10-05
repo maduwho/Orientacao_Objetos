@@ -7,7 +7,8 @@ namespace trabalho_objetos
     {
         static void Main(string[] args)
         {
-            
+
+            Login.Logar();
 
             foreach (Conta conta in ContaModel.List)
             {
@@ -24,10 +25,10 @@ namespace trabalho_objetos
                         selecao.MostrarSaldo();
                         break;
                     case 2:
-                        selecao.MostrarExtrato(operacoes[Menu.MenuExtrato() - 1]);
+                        selecao.MostrarExtrato(Operacao.operacoes[Menu.MenuExtrato() - 1]);
                         break;
                     case 3:
-                        string tipo = operacoes[Menu.MenuTransferencia()];
+                        string tipo = Operacao.operacoes[Menu.MenuTransferencia()];
 
                         Conta beneficiario = Menu.MenuLogin(ContaModel.List);
                         int valor;
