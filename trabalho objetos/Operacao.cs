@@ -10,6 +10,7 @@ namespace trabalho_objetos
 {
     internal class Operacao
     {
+        public static string[] operacoes = { "GERAL", "PIX", "DÉBITO", "CRÉDITO" };
         public double valor;
         public string tipo;
         public DateTime data;

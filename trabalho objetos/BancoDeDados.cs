@@ -20,7 +20,7 @@ namespace trabalho_objetos
             catch (Exception ex)
             {
                 Console.Clear();
-                Console.WriteLine($"\nErro ao salvar arquivo de dados.\n*Err: {ex.Message}");
+                Console.WriteLine($"Erro ao salvar arquivo de dados.\n*Err: {ex.Message}");
             }
         }
         public static List<Conta> OpenFile(List<Conta> data)
@@ -39,7 +39,7 @@ namespace trabalho_objetos
             catch (Exception ex)
             {
                 Console.Clear();
-                Console.WriteLine($"\nErro ao ler arquivo de dados.\n*Err: {ex.Message}");
+                Console.WriteLine($"Erro ao ler arquivo de dados.\n*Err: {ex.Message}");
             }
 
             return data;
