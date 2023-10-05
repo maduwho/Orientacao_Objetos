@@ -7,8 +7,8 @@ namespace trabalho_objetos
     {
         static void Main(string[] args)
         {
-            SetupDeDados.CriarContaAleatoria(5);
-            ContaModel.Create();
+            SetupDeDados.CriarContaAleatoria(15);
+            // ContaModel.Create();
             Login.Logar();
 
             foreach (Conta conta in ContaModel.List)

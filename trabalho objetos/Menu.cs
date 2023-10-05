@@ -8,30 +8,90 @@ namespace trabalho_objetos
 {
     internal class Menu
     {
-        public static int MenuLogin()
+
+        public static int MenuLogin(string currentText = "", int i = 0, ConsoleKeyInfo key = new ConsoleKeyInfo())
         {
-            
-                Console.Write("Digite sua conta: ");
-                int num_da_conta;
+            int itensPorPagina = 10;
+            switch (key.Key)
+            {
+                case ConsoleKey.D0:
+                case ConsoleKey.NumPad0:
+                    currentText += "0";
+                    break;
+                case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
+                    currentText += "1";
+                    break;
+                case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
+                    currentText += "2";
+                    break;
+                case ConsoleKey.D3:
+                case ConsoleKey.NumPad3:
+                    currentText += "3";
+                    break;
+                case ConsoleKey.D4:
+                case ConsoleKey.NumPad4:
+                    currentText += "4";
+                    break;
+                case ConsoleKey.D5:
+                case ConsoleKey.NumPad5:
+                    currentText += "5";
+                    break;
+                case ConsoleKey.D6:
+                case ConsoleKey.NumPad6:
+                    currentText += "6";
+                    break;
+                case ConsoleKey.D7:
+                case ConsoleKey.NumPad7:
+                    currentText += "7";
+                    break;
+                case ConsoleKey.D8:
+                case ConsoleKey.NumPad8:
+                    currentText += "8";
+                    break;
+                case ConsoleKey.D9:
+                case ConsoleKey.NumPad9:
+                    currentText += "9";
+                    break;
+                case ConsoleKey.UpArrow:
+                    i--;
+                    if (i < 0) i = 0;
+                    break;
+                case ConsoleKey.DownArrow:
+                    i++;
+                    if (i >= ContaModel.List.Count - itensPorPagina) i = Math.Max(0, ContaModel.List.Count - itensPorPagina);
+                    break;
+                case ConsoleKey.Backspace:
+                    if (currentText.Length > 0)
+                    {
+                        currentText = currentText.Substring(0, (currentText.Length - 1));
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                case ConsoleKey.Spacebar:
+                    return Convert.ToInt32(currentText);
+                case ConsoleKey.Escape:
+                    System.Environment.Exit(1);
+                    return -1;
+            }
+
+            Console.Clear();
+            Console.WriteLine("------------------------------------------------------------");
+            Console.Write("\tDigite o numero da sua conta: " + currentText + "\n");
+            Console.WriteLine("------------------------------------------------------------");
+            Console.WriteLine("Numero da Conta\t\tCliente");
+            for (int k = 0; k < itensPorPagina; k++)
+            {
                 try
                 {
-                    num_da_conta = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(ContaModel.List[i + k].Num_da_conta + "-" + ContaModel.List[i + k].Num_verificador + "\t\t\t" + ContaModel.List[i + k].Nome);
                 }
-                catch (Exception ex)
-                {
-                    num_da_conta = 0;
-                }
-                Console.Write("Digite seu digito verificador: ");
-                int num_do_verificador;
-                try
-                {
-                    num_do_verificador = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception ex)
-                {
-                    num_do_verificador = 0;
-                }
-                return num_da_conta * 10 + num_do_verificador;
+                catch{ }
+            }
+            Console.WriteLine("------------------------------------------------------------");
+
+            return MenuLogin(currentText, i, Console.ReadKey());
 
         }
         public static int MenuOpcoes()
