@@ -10,9 +10,12 @@ namespace trabalho_objetos
     {
         public static List<Conta> List = BancoDeDados.OpenFile(new List<Conta>());
 
-        public static void Create ()
+        public static void Create (string nome = null, string cpf = null)
         {
-            Conta novaConta = new Conta(1 , new Random().Next(0, 9));
+            int numeroDaConta = ContaModel.List.Count + 1;
+            int numeroVerificador = new Random().Next(0, 9);
+
+            Conta novaConta = new Conta(numeroDaConta, numeroVerificador, nome, cpf);
             ContaModel.List.Add(novaConta);
         }
 

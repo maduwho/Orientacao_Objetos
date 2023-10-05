@@ -15,6 +15,29 @@ namespace trabalho_objetos
         public double Saldo;
         public int RendaMensal;
         public List<Operacao> extrato;
+        public Conta(int num_da_conta, int num_verificador, string nome = null, string Cpf = null) 
+        {
+
+            if (nome == null)
+            {
+                Console.Write("Digite o nome da Conta: ");
+                nome = Console.ReadLine();
+            }
+
+            if (Cpf == null)
+            {
+                Console.Write("Digite o CPF: ");
+                this.Cpf = Console.ReadLine();
+            }
+
+            this.Nome = nome;
+            this.Cpf = Cpf;
+            this.Num_da_conta = num_da_conta;
+            this.Num_verificador = num_verificador;
+            this.Saldo = new Random().Next(100,1000);
+            this.extrato = new List<Operacao>();
+            this.RendaMensal = new Random().Next(10,100)*100;
+        }
 
         public void MostrarExtrato(string tipo = "GERAL")
         {
@@ -47,22 +70,5 @@ namespace trabalho_objetos
         }
 
 
-        public Conta(int num_da_conta, int num_verificador, string nome = null, string Cpf = null) 
-        {
-            if (nome == null)
-            {
-                Console.WriteLine("Digite o nome da Conta");
-                this.Nome = Console.ReadLine();
-            } else
-            {
-                this.Nome = nome;
-            }
-            this.Cpf = Cpf;
-            this.Num_da_conta = num_da_conta;
-            this.Num_verificador = num_verificador;
-            this.Saldo = new Random().Next(100,1000);
-            this.extrato = new List<Operacao>();
-            this.RendaMensal = new Random().Next(100,1000);
-        }
     }
 }

@@ -7,24 +7,9 @@ namespace trabalho_objetos
     {
         static void Main(string[] args)
         {
-            
-            string[] operacoes = { "GERAL", "PIX", "DÉBITO", "CRÉDITO" };
 
-            if (ContaModel.List.Count == 0 )
-            {
-                ContaModel.List.Add(new Conta("Ricardo", 23, 1234, 5));
-                ContaModel.List.Add(new Conta("Madu", 20, 6789, 0));
-                ContaModel.List.Add(new Conta("Bruno", 23, 3216, 7));
-                ContaModel.List.Add(new Conta("Jadina", 23, 7894, 2));
-                ContaModel.List.Add(new Conta("Victor", 17, 1597, 6));
-                for (int i = 0; i < 50; i++)
-                {
-                     Operacao.Transferir(ContaModel.List[new Random().Next(0,4)], ContaModel.List[new Random().Next(0,4)], new Random().Next(10,300), operacoes[new Random().Next(1,operacoes.Length)],false);
-                }
-            }
+            Login.Logar();
 
-            //RecarregarCelular(contas[0]);
-            //contas[3].MostrarExtrato(); 
             foreach (Conta conta in ContaModel.List)
             {
                 conta.MostrarSaldo();
@@ -40,10 +25,10 @@ namespace trabalho_objetos
                         selecao.MostrarSaldo();
                         break;
                     case 2:
-                        selecao.MostrarExtrato(operacoes[Menu.MenuExtrato() - 1]);
+                        selecao.MostrarExtrato(Operacao.operacoes[Menu.MenuExtrato() - 1]);
                         break;
                     case 3:
-                        string tipo = operacoes[Menu.MenuTransferencia()];
+                        string tipo = Operacao.operacoes[Menu.MenuTransferencia()];
 
                         Conta beneficiario = Menu.MenuLogin(ContaModel.List);
                         int valor;
