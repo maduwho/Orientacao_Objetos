@@ -8,10 +8,9 @@ namespace trabalho_objetos
 {
     internal class Menu
     {
-        public static Conta MenuLogin(List<Conta> contas)
+        public static int MenuLogin()
         {
-            do
-            {
+            
                 Console.Write("Digite sua conta: ");
                 int num_da_conta;
                 try
@@ -32,18 +31,7 @@ namespace trabalho_objetos
                 {
                     num_do_verificador = 0;
                 }
-                foreach (Conta conta in contas)
-                {
-                    if (conta.Num_da_conta == num_da_conta && conta.Num_verificador == num_do_verificador)
-                    {
-                        return conta;
-                    }
-                }
-                Console.Clear();
-                Console.WriteLine("Conta inexistente");
-
-
-            } while (true);
+                return num_da_conta * 10 + num_do_verificador;
 
         }
         public static int MenuOpcoes()

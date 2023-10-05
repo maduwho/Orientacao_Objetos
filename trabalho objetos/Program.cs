@@ -7,7 +7,8 @@ namespace trabalho_objetos
     {
         static void Main(string[] args)
         {
-
+            SetupDeDados.CriarContaAleatoria(5);
+            ContaModel.Create();
             Login.Logar();
 
             foreach (Conta conta in ContaModel.List)
@@ -18,7 +19,7 @@ namespace trabalho_objetos
             do
             {
                 
-                Conta selecao = Menu.MenuLogin(ContaModel.List);
+                Conta selecao = new Conta(1,1);
                 switch (Menu.MenuOpcoes())
                 {
                     case 1:
@@ -30,7 +31,7 @@ namespace trabalho_objetos
                     case 3:
                         string tipo = Operacao.operacoes[Menu.MenuTransferencia()];
 
-                        Conta beneficiario = Menu.MenuLogin(ContaModel.List);
+                        Conta beneficiario = new Conta(2, 1);
                         int valor;
                         try
                         {
