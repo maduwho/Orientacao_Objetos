@@ -9,7 +9,7 @@ namespace trabalho_objetos
     internal class Menu
     {
 
-        public static int MenuLogin(string currentText = "", int i = 0, ConsoleKeyInfo key = new ConsoleKeyInfo())
+        public static int MenuSelecionarConta(string currentText = "", int i = 0, ConsoleKeyInfo key = new ConsoleKeyInfo())
         {
             int itensPorPagina = 10;
             switch (key.Key)
@@ -70,6 +70,7 @@ namespace trabalho_objetos
                     break;
                 case ConsoleKey.Enter:
                 case ConsoleKey.Spacebar:
+                    if (currentText.Equals("")) { currentText = "0"; }
                     return Convert.ToInt32(currentText);
                 case ConsoleKey.Escape:
                     System.Environment.Exit(1);
@@ -91,30 +92,56 @@ namespace trabalho_objetos
             }
             Console.WriteLine("------------------------------------------------------------");
 
-            return MenuLogin(currentText, i, Console.ReadKey());
+            return MenuSelecionarConta(currentText, i, Console.ReadKey());
 
         }
-        public static int MenuOpcoes()
-        {
-            int opcao;
-            do
-            {
-                Console.WriteLine("Selecione a opção desejada:");
-                Console.WriteLine("1- Saldo");
-                Console.WriteLine("2- Extrato");
-                Console.WriteLine("3- Transferências");
-                Console.WriteLine("4- Recarga de celular");
-                try
-                {
-                    opcao = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception ex)
-                {
-                    opcao = 0;
-                }
 
-            } while (opcao < 1 || opcao > 4);
-            return opcao;
+        public static void MenuPrincipal()
+        {
+            Console.Clear();
+            Console.WriteLine("Selecione a opção desejada:");
+            Console.WriteLine("1- Saldo");
+            Console.WriteLine("2- Extrato");
+            Console.WriteLine("3- Transferências");
+            Console.WriteLine("4- Recarga de celular");
+            Console.WriteLine("5- Gerar Transferências");
+            Console.WriteLine("0- Sair");
+            switch (Console.ReadLine()) {
+                case "0":
+                    return;
+                case "1":
+                    Console.Clear();
+                    ContaModel.List[Login.AccountIndex].MostrarSaldo();
+                    Console.WriteLine("Pressione um tecla para continuar.");
+                    Console.ReadLine();
+                    break;
+                case "2":
+                    Console.Clear();
+                    ContaModel.List[Login.AccountIndex].MostrarExtrato(Operacao.operacoes[Menu.MenuExtrato()]);
+                    Console.WriteLine("Pressione um tecla para continuar.");
+                    Console.ReadLine();
+                    break;
+                case "3":
+                    Console.Clear();
+                    Conta contaBeneficiaria = ContaModel.BuscarConta();
+                    Operacao.Transferir(ContaModel.List[Login.AccountIndex], contaBeneficiaria);
+                    Console.WriteLine("Pressione um tecla para continuar.");
+                    Console.ReadLine();
+                    break;
+                case "4":
+                    Console.Clear();
+                    Operacao.RecarregarCelular(ContaModel.List[Login.AccountIndex]);
+                    Console.WriteLine("Pressione um tecla para continuar.");
+                    Console.ReadLine();
+                    break;
+                case "5":
+                    Console.Clear();
+                    SetupDeDados.CriarTransferenciaAleatoria(50);
+                    break;
+            }
+
+            MenuPrincipal();
+
         }
 
         public static int MenuTransferencia()

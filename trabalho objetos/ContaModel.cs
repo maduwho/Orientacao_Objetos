@@ -10,6 +10,24 @@ namespace trabalho_objetos
     {
         public static List<Conta> List = BancoDeDados.OpenFile(new List<Conta>());
 
+        public static Conta BuscarConta()
+        {
+            while (true)
+            {
+
+                int loginDigitado = Menu.MenuSelecionarConta();
+
+                foreach (Conta conta in ContaModel.List)
+                {
+                    int loginIterado = conta.Num_da_conta * 10 + conta.Num_verificador;
+                    if (loginDigitado == loginIterado)
+                    {
+                        return conta;
+                    }
+                }
+            }
+        }
+
         public static void Create (string nome = null, string cpf = null)
         {
             int numeroDaConta = ContaModel.List.Count + 1;

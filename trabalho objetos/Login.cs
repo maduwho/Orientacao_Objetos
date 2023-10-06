@@ -8,25 +8,12 @@ namespace trabalho_objetos
 {
     internal class Login
     {
-
+        public static int AccountIndex;
         public static void Logar()
         {
-            //TODO: While para tentar até ter sucesso.
-            bool login = false;
-            while (!login)
-            {
-                
-                int loginDigitado = Menu.MenuLogin();
+            Conta contaLogin = ContaModel.BuscarConta();
 
-                foreach (Conta conta in ContaModel.List)
-                {
-                    int loginIterado = conta.Num_da_conta * 10 + conta.Num_verificador;
-                    if (loginDigitado == loginIterado)
-                    {
-                        login = true;
-                    }
-                }
-            }
+            Login.AccountIndex = ContaModel.List.IndexOf(contaLogin);
         }
 
     }
