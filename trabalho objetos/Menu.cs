@@ -105,6 +105,7 @@ namespace trabalho_objetos
             Console.WriteLine("3- Transferências");
             Console.WriteLine("4- Recarga de celular");
             Console.WriteLine("5- Gerar Transferências");
+            Console.WriteLine("6- Empréstimo");
             Console.WriteLine("0- Sair");
             switch (Console.ReadLine()) {
                 case "0":
@@ -137,6 +138,13 @@ namespace trabalho_objetos
                 case "5":
                     Console.Clear();
                     SetupDeDados.CriarTransferenciaAleatoria(50);
+                    break;
+
+                    case "6":
+                    Console.Clear();
+                    Operacao.RealizarEmprestimo(ContaModel.List[Login.AccountIndex].RendaMensal);
+                    Console.WriteLine("Pressione um tecla para continuar.");
+                    Console.ReadLine();
                     break;
             }
 

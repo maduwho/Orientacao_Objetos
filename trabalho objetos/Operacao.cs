@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -107,10 +108,59 @@ namespace trabalho_objetos
 
         public static void RealizarEmprestimo(int RendaMensal)
         {
-            if ( RendaMensal > 500)
+            int emprestimo;
+            switch (RendaMensal)
             {
-             
+                case < 1000:
+                    emprestimo = 0;
+                    break;
+
+                case < 2000:
+                    emprestimo = 5000;
+                    break;
+
+                case < 5000:
+                    emprestimo = 10000;
+                    break;
+
+                case < 10000:
+                    emprestimo = 30000;
+                    break;
+
+                case < 50000:
+                    emprestimo = 500000;
+                    break;
+
+                case >= 50000:
+                    emprestimo = 1000000;
+                    break;
+
+                default: emprestimo = 0;
+                    break;   
+
             }
+
+            emprestimo -= ContaModel.List[Login.AccountIndex].Emprestimo;
+            string text = emprestimo == 0 ? "Indisponível" : "R$"+emprestimo.ToString();
+            Console.WriteLine($"Sua renda mensal é de {ContaModel.List[Login.AccountIndex].RendaMensal}");
+            Console.WriteLine($"O empréstimo disponível é de: {text}");
+            Console.Write("Digite a quantidade desejada: ");
+            int valor = Convert.ToInt32(Console.ReadLine());
+            if (valor <= emprestimo)
+            {
+
+                ContaModel.List[Login.AccountIndex].Depositar(valor);
+                Operacao transacao1 = new Operacao(-valor, "Empréstimo!");
+                ContaModel.List[Login.AccountIndex].Emprestimo += valor;
+
+                ContaModel.List[Login.AccountIndex].extrato.Add(transacao1);
+                Console.WriteLine("Empréstimo efetuado!");
+            }
+            else
+            {
+                Console.WriteLine("Empréstimo recusado!");
+            }
+
         }
     }
 }
