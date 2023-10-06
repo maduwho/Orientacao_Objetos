@@ -34,17 +34,24 @@ namespace trabalho_objetos
                 }
             }
 
-            conta1.Sacar(valor);
-            Operacao transacao1 = new Operacao(-valor, tipo);
-            conta2.Depositar(valor);
-            Operacao transacao2 = new Operacao(valor, tipo);
-
-            conta1.extrato.Add(transacao1);
-            conta2.extrato.Add(transacao2);
-            if (log)
+            if(conta1.Saldo >= valor)
             {
-                Console.WriteLine("Transferência efetuada!");
+                conta1.Sacar(valor);
+                Operacao transacao1 = new Operacao(-valor, tipo);
+                conta2.Depositar(valor);
+                Operacao transacao2 = new Operacao(valor, tipo);
+
+                conta1.extrato.Add(transacao1);
+                conta2.extrato.Add(transacao2);
+                if (log)
+                {
+                    Console.WriteLine("Transferência efetuada!");
+                }
+            } else
+            {
+                Console.WriteLine("Saldo Insuficiente!");
             }
+
         }
 
         public static void RecarregarCelular(Conta conta1)
