@@ -13,14 +13,16 @@ namespace trabalho_objetos
             string[] nomes = {
                 "Ana", "Carlos", "Maria", "Pedro", "Lúcia", "José", "Isabela", "Rafael", "Patrícia", "Lucas",
                 "Amanda", "Bruno", "Clara", "Daniel", "Eduarda", "Fernando", "Gabriela", "Hugo", "Ingrid", "Jorge",
-                "Karen", "Leonardo", "Mariana", "Nathan", "Olivia", "Paulo", "Quitéria", "Ricardo", "Sofia", "Thiago"
+                "Karen", "Leonardo", "Mariana", "Nathan", "Olivia", "Paulo", "Quitéria", "Ricardo", "Sofia", "Thiago",
+                "Maria Eduarda", "Andrele", "Erotides", "João"
             };
             string[] sobrenomes = {
                 "Silva", "Santos", "Pereira", "Ferreira", "Almeida", "Ribeiro", "Oliveira", "Costa", "Gonçalves", "Rodrigues",
                 "Martins", "Lima", "Araújo", "Fernandes", "Carvalho", "Gomes", "Nascimento", "Mendes", "Barbosa", "Teixeira",
                 "Machado", "Cardoso", "Dias", "Sousa", "Correia", "Ramos", "Cavalcanti", "Dantas", "Castro", "Vieira", "de Souza",
                 "Schmidt", "Müller", "Schneider", "Fischer", "Weber", "Schulz", "Becker", "Hoffmann", "Koch", "Bauer", "Mees",
-                "Rossi", "Russo", "Ferrari", "Esposito", "Bianchi", "Romano", "Colombo", "Ricci", "Marino", "Greco"
+                "Rossi", "Russo", "Ferrari", "Esposito", "Bianchi", "Romano", "Colombo", "Ricci", "Marino", "Greco", "da Silva", "Pereira", 
+                "Lauth", "Oecksler", "Montibeller"
             };
 
             do

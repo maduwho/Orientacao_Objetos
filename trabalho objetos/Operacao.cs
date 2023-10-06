@@ -92,7 +92,7 @@ namespace trabalho_objetos
         {
             if ( RendaMensal > 500)
             {
-                
+             
             }
         }
     }
