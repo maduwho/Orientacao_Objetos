@@ -22,8 +22,18 @@ namespace trabalho_objetos
             this.data = DateTime.Now;
         }
 
-        public static void Transferir(Conta conta1, Conta conta2, double valor, string tipo, bool log = true)
+        public static void Transferir(Conta conta1, Conta conta2, double valor = 0, string tipo = "PIX", bool log = true)
         {
+            if (valor == 0)
+            {
+                Console.Write("Digite o valor da transferência: ");
+                try {
+                    valor = Convert.ToDouble(Console.ReadLine());
+                } catch
+                {
+                }
+            }
+
             conta1.Sacar(valor);
             Operacao transacao1 = new Operacao(-valor, tipo);
             conta2.Depositar(valor);
