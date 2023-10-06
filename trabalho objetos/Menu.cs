@@ -117,7 +117,7 @@ namespace trabalho_objetos
                     break;
                 case "2":
                     Console.Clear();
-                    ContaModel.List[Login.AccountIndex].MostrarExtrato();
+                    ContaModel.List[Login.AccountIndex].MostrarExtrato(Operacao.operacoes[Menu.MenuExtrato()]);
                     Console.WriteLine("Pressione um tecla para continuar.");
                     Console.ReadLine();
                     break;

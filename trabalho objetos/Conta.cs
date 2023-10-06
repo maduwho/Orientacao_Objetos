@@ -8,14 +8,15 @@ namespace trabalho_objetos
 {
     internal class Conta
     {
-        public string Nome;
-        public string Cpf;
-        public int Num_da_conta;
-        public int Num_verificador;
-        public double Saldo;
-        public int RendaMensal;
-        public List<Operacao> extrato;
-        public Conta(int num_da_conta, int num_verificador, string nome = null, string Cpf = null) 
+        public string Nome { get; set; }
+        public string Cpf { get; set; }
+        public int Num_da_conta { get; set; }
+        public int Num_verificador { get; set; }
+        public double Saldo { get; set; }
+        public int RendaMensal { get; set; }
+        public List<Operacao> extrato { get; set; }
+
+        public Conta(int num_da_conta, int num_verificador, string nome = null, string cpf = null) 
         {
 
             if (nome == null)
@@ -24,14 +25,14 @@ namespace trabalho_objetos
                 nome = Console.ReadLine();
             }
 
-            if (Cpf == null)
+            if (cpf == null)
             {
                 Console.Write("Digite o CPF: ");
-                this.Cpf = Console.ReadLine();
+                cpf = Console.ReadLine();
             }
 
             this.Nome = nome;
-            this.Cpf = Cpf;
+            this.Cpf = cpf;
             this.Num_da_conta = num_da_conta;
             this.Num_verificador = num_verificador;
             this.Saldo = new Random().Next(100,1000);
