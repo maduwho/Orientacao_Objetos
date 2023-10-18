@@ -37,7 +37,7 @@ namespace trabalho_objetos
                     cpfAleatorio += new Random().Next(0, 10).ToString();
                 }
 
-                ContaModel.Create(nomeAleatorio, cpfAleatorio);
+                ContaModel.CreateConta(nomeAleatorio, cpfAleatorio);
 
                 quantidade--;
             } while (quantidade > 0);
