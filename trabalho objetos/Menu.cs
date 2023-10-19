@@ -86,7 +86,7 @@ namespace trabalho_objetos
             {
                 try
                 {
-                    Console.WriteLine(ContaModel.List[i + k].Num_da_conta + "-" + ContaModel.List[i + k].Num_verificador + "\t\t\t" + ContaModel.List[i + k].Nome);
+                    Console.WriteLine(ContaModel.List[i + k].NUM_DA_CONTA + "-" + ContaModel.List[i + k].NUM_VERIFICADOR + "\t\t\t" + ContaModel.List[i + k].NOME);
                 }
                 catch{ }
             }
